@@ -1,0 +1,37 @@
+fileFormatVersion: 2
+guid: 90c1923faf908e142ade8a95f255ab28
+importerOverride: ZEPETO.Script.Compiler:ZEPETO.Script:TypescriptAssetImporter
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: -1123457745, guid: 54cf806323ffe4418a4ce4cc63fe6b9d, type: 3}
+  isAssemblyDeclarations: 0
+  assembly: 
+  generateAllTypes: 1
+  types: []
+  generateWrapper: 0
+  overrideWrapperTypes: 0
+  wrapperTypes: []
+  WrapperFilters: []
+  wrapperOutputDirectory: Generated
+  compiledResult: '{"source":"\"use strict\";\r\nObject.defineProperty(exports, \"__esModule\",
+    { value: true });\r\nconst ZEPETO_Script_1 = require(\"ZEPETO.Script\");\r\nconst
+    ZEPETO_Character_Controller_1 = require(\"ZEPETO.Character.Controller\");\r\nconst
+    UnityEngine_1 = require(\"UnityEngine\");\r\nconst Boat_1 = require(\"./Boat\");\r\nconst
+    MyCharacter_1 = require(\"./MyCharacter\");\r\nclass TestMain extends ZEPETO_Script_1.ZepetoScriptBehaviour
+    {\r\n    //public _boat : Boat;(x)\r\n    Start() {\r\n        const boat = this.boatGo.GetComponent($typeof(Boat_1.default));\r\n       
+    this.btn.onClick.AddListener(() => {\r\n            boat.MoveStart();\r\n       
+    });\r\n        $extension(\"ZEPETO.Character.Controller.ZepetoPlayersExtension\").CreatePlayerWithZepetoId(ZEPETO_Character_Controller_1.ZepetoPlayers.instance,
+    \"\", \"smilejsu82\", new ZEPETO_Character_Controller_1.SpawnInfo(), true);\r\n       
+    ZEPETO_Character_Controller_1.ZepetoPlayers.instance.OnAddedLocalPlayer.AddListener(()
+    => {\r\n            let _player = ZEPETO_Character_Controller_1.ZepetoPlayers.instance.LocalPlayer;\r\n           
+    console.log(\"-------------???\");\r\n            let myCharacter = _player.zepetoPlayer.character.gameObject.AddComponent($typeof(MyCharacter_1.default));\r\n           
+    myCharacter.onBoat = () => {\r\n                myCharacter.transform.SetParent(this.boatGo.transform);\r\n           
+    };\r\n            myCharacter.Init();\r\n        });\r\n    }\r\n}\r\nexports.default
+    = TestMain;\r\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiVGVzdE1haW4uanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJUZXN0TWFpbi50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUFBLGlEQUFzRDtBQUN0RCw2RUFBb0Y7QUFFcEYsNkNBQXlDO0FBQ3pDLGlDQUEwQjtBQUMxQiwrQ0FBd0M7QUFFeEMsTUFBcUIsUUFBUyxTQUFRLHFDQUFxQjtJQUt2RCx5QkFBeUI7SUFFekIsS0FBSztRQUVELE1BQU0sSUFBSSxHQUFHLElBQUksQ0FBQyxNQUFNLENBQUMsWUFBWSxTQUFDLGNBQUksRUFBRyxDQUFDO1FBSTlDLElBQUksQ0FBQyxHQUFHLENBQUMsT0FBTyxDQUFDLFdBQVcsQ0FBQyxHQUFFLEVBQUU7WUFDN0IsSUFBSSxDQUFDLFNBQVMsRUFBRSxDQUFDO1FBQ3JCLENBQUMsQ0FBQyxDQUFDO1FBRUgsaUVBQXVCLHdCQUF3QixDQUEvQywyQ0FBYSxDQUFDLFFBQVEsRUFBMEIsRUFBRSxFQUFFLFlBQVksRUFBRSxJQUFJLHVDQUFTLEVBQUUsRUFBRSxJQUFJLEVBQUU7UUFDekYsMkNBQWEsQ0FBQyxRQUFRLENBQUMsa0JBQWtCLENBQUMsV0FBVyxDQUFDLEdBQUcsRUFBRTtZQUN2RCxJQUFJLE9BQU8sR0FBaUIsMkNBQWEsQ0FBQyxRQUFRLENBQUMsV0FBVyxDQUFDO1lBRS9ELE9BQU8sQ0FBQyxHQUFHLENBQUMsa0JBQWtCLENBQUMsQ0FBQztZQUVoQyxJQUFJLFdBQVcsR0FBZSxPQUFPLENBQUMsWUFBWSxDQUFDLFNBQVMsQ0FBQyxVQUFVLENBQUMsWUFBWSxTQUFDLHFCQUFXLEVBQUcsQ0FBQztZQUNwRyxXQUFXLENBQUMsTUFBTSxHQUFHLEdBQUUsRUFBRTtnQkFFckIsV0FBVyxDQUFDLFNBQVMsQ0FBQyxTQUFTLENBQUMsSUFBSSxDQUFDLE1BQU0sQ0FBQyxTQUFTLENBQUMsQ0FBQztZQUUzRCxDQUFDLENBQUM7WUFDRixXQUFXLENBQUMsSUFBSSxFQUFFLENBQUM7UUFFdkIsQ0FBQyxDQUFDLENBQUM7SUFDUCxDQUFDO0NBRUo7QUFsQ0QsMkJBa0NDIn0=","assetPath":"Assets/TestMain.ts","manifest":{"properties":[{"assembly":"UnityEngine.UI","name":"btn","type":"UnityEngine.UI.Button","isArray":false,"initValue":[],"enumKeys":[],"enumValues":[],"attributes":[]},{"assembly":"UnityEngine.CoreModule","name":"boatGo","type":"UnityEngine.GameObject","isArray":false,"initValue":[],"enumKeys":[],"enumValues":[],"attributes":[]}],"name":"TestMain","description":""},"isCompiled":true}'
+  typescriptHash: 77afb6a6e8fa6f755c83b0c8423245ea
+  onlyWriteTrigger: 0

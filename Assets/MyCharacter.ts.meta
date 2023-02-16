@@ -1,0 +1,48 @@
+fileFormatVersion: 2
+guid: 5524bcdcdf5dff44a9992b28e5118482
+importerOverride: ZEPETO.Script.Compiler:ZEPETO.Script:TypescriptAssetImporter
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: -1123457745, guid: 54cf806323ffe4418a4ce4cc63fe6b9d, type: 3}
+  isAssemblyDeclarations: 0
+  assembly: 
+  generateAllTypes: 1
+  types: []
+  generateWrapper: 0
+  overrideWrapperTypes: 0
+  wrapperTypes: []
+  WrapperFilters: []
+  wrapperOutputDirectory: Generated
+  compiledResult: '{"source":"\"use strict\";\r\nObject.defineProperty(exports, \"__esModule\",
+    { value: true });\r\nconst UnityEngine_1 = require(\"UnityEngine\");\r\nconst
+    ZEPETO_Character_Controller_1 = require(\"ZEPETO.Character.Controller\");\r\nconst
+    ZEPETO_Script_1 = require(\"ZEPETO.Script\");\r\nconst UnityEngine_2 = require(\"UnityEngine\");\r\nclass
+    MyCharacter extends ZEPETO_Script_1.ZepetoScriptBehaviour {\r\n    Init() {\r\n       
+    console.log(''Init'');\r\n        this.rayOriginGo = new UnityEngine_1.GameObject();\r\n       
+    this.rayOriginGo.name = \"rayOriginGo\";\r\n        this.rayOriginGo.transform.SetParent(this.transform);\r\n       
+    this.rayOriginGo.transform.localPosition = UnityEngine_1.Vector3.zero;\r\n   
+    }\r\n    Update() {\r\n        //console.log(ZepetoPlayers.instance.LocalPlayer.zepetoPlayer.character.characterController.velocity.y);\r\n       
+    if (UnityEngine_2.Input.GetKeyDown(UnityEngine_1.KeyCode.Space)) {\r\n           
+    this.ray = new UnityEngine_1.Ray(UnityEngine_1.Vector3.op_Addition(this.rayOriginGo.transform.position,
+    new UnityEngine_1.Vector3(0, 0.5, 0)), UnityEngine_1.Vector3.op_Multiply(this.transform.up,
+    -1));\r\n        }\r\n        //console.log(ZepetoPlayers.instance.LocalPlayer.zepetoPlayer.character.characterController.velocity.y);\r\n       
+    if (ZEPETO_Character_Controller_1.ZepetoPlayers.instance.LocalPlayer.zepetoPlayer.character.characterController.velocity.y
+    < -5) {\r\n            if (this.ray != null) {\r\n                UnityEngine_1.Debug.DrawRay(UnityEngine_1.Vector3.op_Addition(this.rayOriginGo.transform.position,
+    new UnityEngine_1.Vector3(0, 0.5, 0)), UnityEngine_1.Vector3.op_Multiply(this.ray.direction,
+    0.7), UnityEngine_2.Color.red);\r\n                let ref = $ref();\r\n               
+    //console.log(this.ray);\r\n                if (UnityEngine_1.Physics.Raycast(UnityEngine_1.Vector3.op_Addition(this.rayOriginGo.transform.position,
+    new UnityEngine_1.Vector3(0, 0.5, 0)), this.ray.direction, ref, 0.7)) {\r\n                   
+    let hitinfo = $unref(ref);\r\n                    this.ray = null;\r\n                   
+    if (hitinfo.collider.tag == \"Boat\") {\r\n                        console.log(\"----------->>>
+    \" + hitinfo.collider.tag);\r\n                        this.onBoat();\r\n                   
+    }\r\n                    else if (hitinfo.collider.tag == \"Ground\") {\r\n                       
+    console.log(''-------------->> '' + hitinfo.collider.tag);\r\n                       
+    this.transform.SetParent(null);\r\n                    }\r\n                }\r\n           
+    }\r\n        }\r\n    }\r\n}\r\nexports.default = MyCharacter;\r\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiTXlDaGFyYWN0ZXIuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJNeUNoYXJhY3Rlci50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUFBLDZDQUEyRjtBQUMzRiw2RUFBNkU7QUFDN0UsaURBQXFEO0FBQ3JELDZDQUEwQztBQUcxQyxNQUFxQixXQUFZLFNBQVEscUNBQXFCO0lBTW5ELElBQUk7UUFFUCxPQUFPLENBQUMsR0FBRyxDQUFDLE1BQU0sQ0FBQyxDQUFDO1FBQ3BCLElBQUksQ0FBQyxXQUFXLEdBQUcsSUFBSSx3QkFBVSxFQUFFLENBQUM7UUFDcEMsSUFBSSxDQUFDLFdBQVcsQ0FBQyxJQUFJLEdBQUcsYUFBYSxDQUFDO1FBQ3RDLElBQUksQ0FBQyxXQUFXLENBQUMsU0FBUyxDQUFDLFNBQVMsQ0FBQyxJQUFJLENBQUMsU0FBUyxDQUFDLENBQUM7UUFDckQsSUFBSSxDQUFDLFdBQVcsQ0FBQyxTQUFTLENBQUMsYUFBYSxHQUFHLHFCQUFPLENBQUMsSUFBSSxDQUFDO0lBQzVELENBQUM7SUFJRCxNQUFNO1FBRUYsd0dBQXdHO1FBR3hHLElBQUksbUJBQUssQ0FBQyxVQUFVLENBQUMscUJBQU8sQ0FBQyxLQUFLLENBQUMsRUFBQztZQUNoQyxJQUFJLENBQUMsR0FBRyxHQUFHLElBQUksaUJBQUcsQ0E3QmlDLHFCQUFPLENBK0Q4NW1CLFdBQVksQ0FsQ2o5bUIsSUFBSSxDQUFDLFdBQVcsQ0FBQyxTQUFTLENBQUMsUUFBUSxFQUFHLElBQUkscUJBQU8sQ0FBQyxDQUFDLEVBQUUsR0FBRyxFQUFFLENBQUMsQ0FBQyxHQTdCNUIscUJBQU8sQ0ErRDhybkIsV0FBWSxDQWxDbnJuQixJQUFJLENBQUMsU0FBUyxDQUFDLEVBQUUsRUFBRyxDQUFDLENBQUMsRUFBQyxDQUFDO1NBQzVHO1FBRUQsd0dBQXdHO1FBRXhHLElBQUksMkNBQWEsQ0FBQyxRQUFRLENBQUMsV0FBVyxDQUFDLFlBQVksQ0FBQyxTQUFTLENBQUMsbUJBQW1CLENBQUMsUUFBUSxDQUFDLENBQUMsR0FBRyxDQUFDLENBQUMsRUFDakc7WUFDSSxJQUFJLElBQUksQ0FBQyxHQUFHLElBQUksSUFBSSxFQUFDO2dCQUNqQixtQkFBSyxDQUFDLE9BQU8sQ0FyQ2tDLHFCQUFPLENBK0Q4NW1CLFdBQVksQ0ExQmw5bUIsSUFBSSxDQUFDLFdBQVcsQ0FBQyxTQUFTLENBQUMsUUFBUSxFQUFHLElBQUkscUJBQU8sQ0FBQyxDQUFDLEVBQUUsR0FBRyxFQUFFLENBQUMsQ0FBQyxHQXJDM0IscUJBQU8sQ0ErRDhybkIsV0FBWSxDQTFCcHJuQixJQUFJLENBQUMsR0FBRyxDQUFDLFNBQVMsRUFBRyxHQUFHLEdBQUUsbUJBQUssQ0FBQyxHQUFHLENBQUMsQ0FBQztnQkFDakgsSUFBSSxHQUFHLEdBQUcsSUFBSSxFQUFjLENBQUM7Z0JBQzdCLHdCQUF3QjtnQkFDeEIsSUFBRyxxQkFBTyxDQUFDLE9BQU8sQ0F4QzZCLHFCQUFPLENBK0Q4NW1CLFdBQVksQ0F2Qjc4bUIsSUFBSSxDQUFDLFdBQVcsQ0FBQyxTQUFTLENBQUMsUUFBUSxFQUFHLElBQUkscUJBQU8sQ0FBQyxDQUFDLEVBQUUsR0FBRyxFQUFFLENBQUMsQ0FBQyxHQUFFLElBQUksQ0FBQyxHQUFHLENBQUMsU0FBUyxFQUFFLEdBQUcsRUFBRSxHQUFHLENBQUMsRUFBQztvQkFDM0csSUFBSSxPQUFPLEdBQUcsTUFBTSxDQUFDLEdBQUcsQ0FBQyxDQUFDO29CQUMxQixJQUFJLENBQUMsR0FBRyxHQUFHLElBQUksQ0FBQztvQkFFaEIsSUFBRyxPQUFPLENBQUMsUUFBUSxDQUFDLEdBQUcsSUFBSSxNQUFNLEVBQ2pDO3dCQUNJLE9BQU8sQ0FBQyxHQUFHLENBQUMsaUJBQWlCLEdBQUcsT0FBTyxDQUFDLFFBQVEsQ0FBQyxHQUFHLENBQUMsQ0FBQzt3QkFDdEQsSUFBSSxDQUFDLE1BQU0sRUFBRSxDQUFDO3FCQUNqQjt5QkFDSSxJQUFHLE9BQU8sQ0FBQyxRQUFRLENBQUMsR0FBRyxJQUFJLFFBQVEsRUFDeEM7d0JBQ0ksT0FBTyxDQUFDLEdBQUcsQ0FBQyxtQkFBbUIsR0FBRyxPQUFPLENBQUMsUUFBUSxDQUFDLEdBQUcsQ0FBQyxDQUFDO3dCQUN4RCxJQUFJLENBQUMsU0FBUyxDQUFDLFNBQVMsQ0FBQyxJQUFJLENBQUMsQ0FBQztxQkFDbEM7aUJBQ0o7YUFFSjtTQUNKO0lBSUwsQ0FBQztDQUVKO0FBekRELDhCQXlEQyJ9","assetPath":"Assets/MyCharacter.ts","manifest":{"properties":[{"assembly":"","name":"onBoat","type":"__type","isArray":false,"initValue":[],"enumKeys":[],"enumValues":[],"attributes":[]}],"name":"MyCharacter","description":""},"isCompiled":true}'
+  typescriptHash: 3f03c7fc3347182a0c90b53654d0a19e
+  onlyWriteTrigger: 0

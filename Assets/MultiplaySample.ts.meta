@@ -1,0 +1,38 @@
+fileFormatVersion: 2
+guid: 7552495b8cb69fa4f86fb9dd23828658
+importerOverride: ZEPETO.Script.Compiler:ZEPETO.Script:TypescriptAssetImporter
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: -1123457745, guid: 54cf806323ffe4418a4ce4cc63fe6b9d, type: 3}
+  isAssemblyDeclarations: 0
+  assembly: 
+  generateAllTypes: 1
+  types: []
+  generateWrapper: 0
+  overrideWrapperTypes: 0
+  wrapperTypes: []
+  WrapperFilters: []
+  wrapperOutputDirectory: Generated
+  compiledResult: "{\"source\":\"\\\"use strict\\\";\\r\\nObject.defineProperty(exports,
+    \\\"__esModule\\\", { value: true });\\r\\nconst ZEPETO_Script_1 = require(\\\"ZEPETO.Script\\\");\\r\\nconst
+    ZEPETO_World_1 = require(\\\"ZEPETO.World\\\");\\r\\nclass MultiplaySample extends
+    ZEPETO_Script_1.ZepetoScriptBehaviour {\\r\\n    Start() {\\r\\n        this.btn.onClick.AddListener(()
+    => {\\r\\n            console.log(this.room.Id);\\r\\n            this.room.Leave();\\r\\n       
+    });\\r\\n        this.multiplay = this.gameObject.GetComponent($typeof(ZEPETO_World_1.ZepetoWorldMultiplay));\\r\\n       
+    //Room\uC774 \uC0DD\uC131\uB418\uACE0, \uC811\uC18D \uAC00\uB2A5\uD560 \uB54C
+    \uD638\uCD9C\uB429\uB2C8\uB2E4. Room\uC744 \uC778\uC790\uB85C \uC804\uB2EC\uD569\uB2C8\uB2E4.\\r\\n       
+    this.multiplay.add_RoomCreated((room) => {\\r\\n            console.log('[RoomCreated]');\\r\\n           
+    console.log(room);\\r\\n        });\\r\\n        //\uD574\uB2F9 Room\uC5D0 \uC811\uC18D\uB418\uBA74
+    \uD638\uCD9C\uB429\uB2C8\uB2E4. Room\uC744 \uC778\uC790\uB85C \uC804\uB2EC\uD569\uB2C8\uB2E4.       
+    \\r\\n        this.multiplay.add_RoomJoined((room) => {\\r\\n            console.log('[RoomJoined]');\\r\\n           
+    console.log(room);\\r\\n            this.room = room;\\r\\n        });\\r\\n       
+    this.multiplay.add_RoomLeave((evt) => {\\r\\n            console.log('[RoomLeave]');\\r\\n           
+    console.log(evt.Code);\\r\\n            console.log(evt.Message);\\r\\n       
+    });\\r\\n    }\\r\\n}\\r\\nexports.default = MultiplaySample;\\r\\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiTXVsdGlwbGF5U2FtcGxlLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiTXVsdGlwbGF5U2FtcGxlLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBRUEsaURBQXFEO0FBQ3JELCtDQUFtRDtBQUduRCxNQUFxQixlQUFnQixTQUFRLHFDQUFxQjtJQUs5RCxLQUFLO1FBRUQsSUFBSSxDQUFDLEdBQUcsQ0FBQyxPQUFPLENBQUMsV0FBVyxDQUFDLEdBQUUsRUFBRTtZQUM3QixPQUFPLENBQUMsR0FBRyxDQUFDLElBQUksQ0FBQyxJQUFJLENBQUMsRUFBRSxDQUFDLENBQUM7WUFDMUIsSUFBSSxDQUFDLElBQUksQ0FBQyxLQUFLLEVBQUUsQ0FBQztRQUN0QixDQUFDLENBQUMsQ0FBQztRQUVILElBQUksQ0FBQyxTQUFTLEdBQUcsSUFBSSxDQUFDLFVBQVUsQ0FBQyxZQUFZLFNBQUMsbUNBQW9CLEVBQUcsQ0FBQztRQUV0RSw4Q0FBOEM7UUFDOUMsSUFBSSxDQUFDLFNBQVMsaUJBQWdCLENBQUMsSUFBb0IsRUFBQyxFQUFFO1lBQ2xELE9BQU8sQ0FBQyxHQUFHLENBQUMsZUFBZSxDQUFDLENBQUM7WUFDN0IsT0FBTyxDQUFDLEdBQUcsQ0FBQyxJQUFJLENBQUMsQ0FBQztRQUN0QixDQUFDLEVBQUM7UUFFRiwrQ0FBK0M7UUFDL0MsSUFBSSxDQUFDLFNBQVMsZ0JBQWUsQ0FBQyxJQUFvQixFQUFDLEVBQUU7WUFDakQsT0FBTyxDQUFDLEdBQUcsQ0FBQyxjQUFjLENBQUMsQ0FBQztZQUM1QixPQUFPLENBQUMsR0FBRyxDQUFDLElBQUksQ0FBQyxDQUFDO1lBRWxCLElBQUksQ0FBQyxJQUFJLEdBQUcsSUFBSSxDQUFDO1FBQ3JCLENBQUMsRUFBQztRQUVGLElBQUksQ0FBQyxTQUFTLGVBQWMsQ0FBQyxHQUFvQixFQUFFLEVBQUU7WUFFakQsT0FBTyxDQUFDLEdBQUcsQ0FBQyxhQUFhLENBQUMsQ0FBQztZQUMzQixPQUFPLENBQUMsR0FBRyxDQUFDLEdBQUcsQ0FBQyxJQUFJLENBQUMsQ0FBQztZQUN0QixPQUFPLENBQUMsR0FBRyxDQUFDLEdBQUcsQ0FBQyxPQUFPLENBQUMsQ0FBQztRQUM3QixDQUFDLEVBQUM7SUFDTixDQUFDO0NBRUo7QUFwQ0Qsa0NBb0NDIn0=\",\"assetPath\":\"Assets/MultiplaySample.ts\",\"manifest\":{\"properties\":[{\"assembly\":\"UnityEngine.UI\",\"name\":\"btn\",\"type\":\"UnityEngine.UI.Button\",\"isArray\":false,\"initValue\":[],\"enumKeys\":[],\"enumValues\":[],\"attributes\":[]}],\"name\":\"MultiplaySample\",\"description\":\"\"},\"isCompiled\":true}"
+  typescriptHash: 5114d44f666c0ce120d709c07a662d13
+  onlyWriteTrigger: 0
